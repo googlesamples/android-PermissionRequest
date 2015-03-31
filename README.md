@@ -46,13 +46,13 @@ Pre-requisites
 --------------
 
 - Android SDK v21
-- Android Build Tools v21.1.1
+- Android Build Tools v21.1.2
 - Android Support Repository
 
 Screenshots
 -------------
 
-<img src="screenshots/main.png" height="400" alt="Screenshot"/> 
+<img src="screenshots/image1.png" height="400" alt="Screenshot"/> <img src="screenshots/image2.png" height="400" alt="Screenshot"/> 
 
 Getting Started
 ---------------
