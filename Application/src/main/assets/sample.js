@@ -20,7 +20,7 @@
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
     window.URL = window.URL || window.webkitURL;
 
-    window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function () {
 
         var video = document.querySelector('#video'),
             toggle = document.querySelector('#toggle'),
@@ -42,7 +42,13 @@
                     console.error('Error starting camera. Denied.');
                 });
             } else {
-                stream.stop();
+                if (stream.getTracks) {
+                    stream.getTracks().forEach(function (track) {
+                        track.stop();
+                    });
+                } else if (stream.stop) {
+                    stream.stop();
+                }
                 stream = null;
                 toggle.innerText = 'Start';
                 console.log('Stopped');
@@ -51,6 +57,6 @@
 
         console.log('Page loaded');
 
-    };
+    });
 
 })();
